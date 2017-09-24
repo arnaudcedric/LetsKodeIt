@@ -7,3 +7,28 @@
             <version>3.0.0</version>
         </dependency>
          */
+
+             private WebDriver driver;
+             private String baseUrl = "http://letskodeit.teachable.com/p/practice";
+
+             @BeforeTest
+             public void setUp() {
+                 System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/chromedriver.exe");
+                 driver = new ChromeDriver();
+                 driver.manage().window().maximize();
+                 driver.get(baseUrl);
+             }
+             @Test
+             public void test() throws InterruptedException {
+
+
+
+             }
+
+
+             @AfterTest
+             public void tearDown() throws InterruptedException{
+         //        driver.close();
+                 Thread.sleep(2000);
+                 driver.close();
+             }
